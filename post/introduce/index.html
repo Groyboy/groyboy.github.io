@@ -41,17 +41,6 @@
     }
 </style>
 <!-- hack iOS CSS :active style -->
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b878ac007184280bb3bd3839168c9e2f";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
@@ -201,8 +190,8 @@ var _hmt = _hmt || [];
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/hexo-Github/" data-toggle="tooltip" data-placement="top"
-                           title="使用Hexo+GitHub搭建个人博客">&larr; Previous Post</a>
+                        <a href="/post/ceshi-disanpian/" data-toggle="tooltip" data-placement="top"
+                           title="第三章">&larr; Previous Post</a>
                     </li>
                     
                     
@@ -365,6 +354,16 @@ var _hmt = _hmt || [];
 </script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+{% if theme.footer.counter %}
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+
+{% endif %}
 
 <!--wechat title img-->
 <img class="wechat-title-img" src="https://s2.ax1x.com/2019/06/03/VYCaa8.png">
