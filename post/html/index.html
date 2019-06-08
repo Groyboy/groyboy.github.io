@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content>
+    <meta name="keyword" content>
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="Groyboy" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
+        
+        html 前端基础复习笔记｜undefined
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/post/html/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog-style.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+</head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
+" data-ishome="false">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    Groyboy
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+                        
+							
+                        <li>
+                            <a href="/Tags/">Tags</a>
+                        </li>
+							
+						
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img" src="https://s2.ax1x.com/2019/06/07/Vwa0eS.png ">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('https://s2.ax1x.com/2019/06/07/Vwa0eS.png ');
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>html 前端基础复习笔记</h1>
+                    
+                    <h2 class="subheading">总结html的学习笔记</h2>
+                    
+                    <span class="meta">
+                         作者 王义峰
+                        <span>
+                          日期 2019-01-05
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#web - html" title="web - html">web - html</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            html 前端基础复习笔记
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p></p><h2>初识html语言</h2><p></p>
+<p>从去年6月份开始我刚刚接触到前端，那个时候我就在倒腾微信小程序，那个时候甚至什么是html都不懂，也没有人带着多多少少走了很多弯路，最终也是什么都没有做出来知道后来，我看了很多前辈所写的前端学习笔记，那个时候我才知道前端学习的基础语言html、css、js等。所以自己也想写一些基础的语言的笔记正好复习一下。<br></p><br><h2>什么是html</h2><br><p>从官方的翻译来说html是（HyperTextMarkupLanguage——超文本标记语言的缩写）是构成Web世界的一砖一瓦，通缩易懂的说，就是浏览器语言。<br>举个例子来说：中国人有中文是自己的语言；英国人有英语是自己语言；那么浏览器也有自己的语言也就是html语言。</p><br><h2>语言的基本结构</h2><br><p>有过其他语言学习经验的朋友就会懂，什么是麻雀虽小却五脏俱全，也就是头-身体-尾巴<br><pre><code><code>&lt;!DOCTYPE html&gt;   
+    &lt;html&gt;          
+    &lt;head&gt;        
+        &lt;title&gt;这是一个新的标题&lt;/title&gt;
+    &lt;/head&gt;          
+    &lt;body&gt;        
+   这是一个html代码
+    &lt;/body&gt;
+    &lt;/html&gt;</code></code></pre><br>所有的HTML代码都放在一个<code>&lt;html&gt;</code>元素，<code>&lt;html&gt;</code>元素可以包含两个部分:<code>&lt;head&gt;</code>和<code>&lt;body&gt;</code>两个元素。<br><code>&lt;head&gt;</code>元素用于包含整个文档的一般信息，比如文档的标题（<code>&lt;title&gt;</code>元素用于包含标题），对整个文档的描述，文档的关键字等等。<br>文档的具体内容就要放在<code>&lt;body&gt;</code>元素里。HTML使用标签对的方法编写文件，&lt;标签名&gt;&lt;/标签名&gt;（比如<code>&lt;head&gt;&lt;/head&gt;</code>标签对）</p><br><h2>html 都包括哪些标签</h2><br><p>通过不同的标签，HTML文档可以包含不同的内容，比如文本，链接，图片，列表，表格，表单，框架等。<br><ul><li>文本 ：HTML对文本的支持是最丰富的，可以设置不同级别的标题，分段和换行，可以指定文本的语义和外观，等等等等。</li></ul><ul><li>链接 ：链接用来跳转当前页面到另一个页面，就好比传送门。 </li></ul><ul><li>图片 ：图片填充页面使其更加美观与充足，或提供更多的信息。 </li></ul><ul><li>列表 ：列表用于说明一系列条目是彼此相关的。</li></ul><ul><li>表格 ：表格是按行与列将数据组织在一起的形式。也有人使用表格进行页面布局。</li></ul><ul><li>表单 ：表单通常由文本输入框，按钮，多选框，单选框，下拉列表等组成，使HTML页面更有交互性。</li></ul><ul><li>框架 ：框架使页面里能包含其它的页面。 </li></ul></p><br><h2>浅谈html 常用元素</h2><br><h3>1、头部元素</h3><br><table><tbody><tr><th style="width:30%;">标签</th><th style="width:70%;">描述</th></tr><tr><td>&lt;hepd&gt;</td><td>定义关于文档的信息。</td></tr><tr><td>&lt;title&gt;</td><td>定义文档标题。</td></tr><tr><td>&lt;bpse&gt;</td><td>定义页面上所有链接的默认地址或默认目标。</td></tr><tr><td>&lt;link&gt;</td><td>定义文档与外部资源之间的关系。</td></tr><tr><td>&lt;metp&gt;</td><td>定义关于 HTML 文档的元数据。</td></tr><tr><td>&lt;script&gt;</td><td>定义客户端脚本。</td></tr><tr><td>&lt;style&gt;</td><td>定义文档的样式信息。</td></tr></tbody></table><br><h3>2、文字与段落</h3><br><p>网页中经常需要显示文字，需要设置文字格式，如字号、字体、颜色、段落格式等<table><tbody><tr><th>标签</th> <th>描述</th></tr><tr><td>&lt;html&gt;</td> <td>定义 HTML 文档。</td> </tr><tr><td> &lt;body&gt;</td> <td>定义文档的主体。</td></tr><tr><td>&lt;h1&gt; to &lt;h6&gt;</td><td>定义 HTML 标题大小</td></tr><tr><td>&lt;hr&gt;</td><td>定义水平线。</td></tr><tr><td>&lt;!–&gt;</td><td>定义注释。</td></tr><td>&lt;p&gt;</td><td>定义段落。</td><tr><td>&lt;br /&gt;</td><td>插入单个折行（换行）。</td></tr></tbody></table><tr>在html5中属性废除了html4的各种颜色字体的标签和属性，应该使用样式来代替，在写代码时要多注意查看文档</tr></p><br><h3>3、链接标签</h3><p></p><h5>1、超链接</h5><pre><code><code>&lt;a href=&quot;&quot; title=&quot;&quot; target=&quot;&quot;&gt;填写内容&lt;/a&gt;</code><br> （自身页面不关闭，打开一个新的链接页面）</code></pre>href 去往的路径（跳转的页面） 必写属性<br> title 提示文本 鼠标放到链接上显示的文字<br> target=”self” （默认值） 在自身页面打开（关闭自身页面，打开链接页面） Target=”blank” 打开新页面 <h5>2、锚链接</h5>先定义一个锚点：超链接跳转到页面的任何位置。一般用于在页面下面的时候，点击回到最上面。名称AAA可以随意区，只要是标记作用。<pre><code>    <code>&lt;p id=&quot;AAA&quot;&gt;
+
+&lt;/p&gt;
+...
+&lt;a href=&quot;#AAA&quot;&gt;&lt;/a&gt;</code>   // 超链接到锚点</code></pre><h5>3、空链接</h5>不知道链接到那个页面的时候，用空链<pre><code><code>&lt;a href=&quot;#&quot;&gt;空链&lt;/a&gt;</code></code></pre><h5>4、超链接优化</h5><pre><code>&lt;base target=&quot;_blank&quot;&gt;</code>写在head里头每个链接新开一个窗口</pre><p></p><br><h3>音乐、图片插入</h3><br><table><tbody><tr><th>标签</th><th>描述</th></tr><tr><td>&lt;img&gt;</td><td>定义图像。</td></tr><tr><td>&lt;map&gt;</td><td>定义图像地图。</td></tr><tr><td>&lt;area&gt;</td><td>定义图像地图中的可点击区域。</td></tr><tr><td>&lt;audio&gt;</td><td>标签定义声音，比如音乐或其他音频流。</td></tr><tr><td>&lt;embed&gt;</td><td>标签定义嵌入的内容，比如插件。</td></tr></tbody></table><br><h3>特殊字号</h3><br><table><tbody><tr><th>标签</th><th>显示</th><th>描述</th></tr><tr><td>&amp;lt;</td><td>&lt;</td><td>小于号或显示标记</td></tr><tr><td>&amp;gt;</td><td>&gt;</td><td>大于号或显示标记</td></tr><tr><td>&amp;amp;</td><td>&amp;</td><td>可用于显示其它特殊字符</td></tr><tr><td>&amp;quot;</td><td>“</td><td>引号</td></tr><tr><td>&amp;reg;</td><td>®</td><td>已注册</td></tr><tr><td>&amp;copy;</td><td>©</td><td>版权</td></tr><tr><td>&amp;trade;</td><td>™</td><td>商标</td></tr><tr><td>&amp;ensp;</td><td></td><td>半个空白位</td></tr><tr><td>&amp;emsp;</td><td> </td><td>一个空白位</td></tr><tr><td>&amp;nbsp;</td><td>&nbsp;</td><td>不断行的空白</td></tr></tbody></table><br><h3>总结</h3><br><p>html这些知识只是基础罢了，甚至有很多我也没有介绍全面，上面我介绍的都是一些常用的基本元素，html中还有表格、表单、列表、属性这些我没有介绍全面，但是综上所述你也足够写出一个html文本啦，感谢您的观阅，如有疑问和版权冲突请及时联系我会更改</p>
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/hexo-Github/" data-toggle="tooltip" data-placement="top" title="使用Hexo+GitHub搭建个人博客">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">初识html语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">什么是html</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">语言的基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">html 都包括哪些标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">浅谈html 常用元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">1、头部元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">2、文字与段落</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">3、链接标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">1、超链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">2、锚链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">3、空链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">4、超链接优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">音乐、图片插入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">特殊字号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">总结</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#web - html" title="web - html">web - html</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Groyboy 2019
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/blog.js"></script>
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    var _baId = 'b878ac007184280bb3bd3839168c9e2f';
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="https://s2.ax1x.com/2019/06/03/VYCaa8.png">
+</body>
+
+</html>
