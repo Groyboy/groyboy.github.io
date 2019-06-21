@@ -188,7 +188,16 @@
             alert(&#39;Hello, world&#39;);
         &lt;/script&gt;
     &lt;/body&gt;
-    &lt;/html&gt;</code></code></pre></p><br>这段代码你可以很清楚的看到head部分中<code>&lt;script type=&quot;text/javascript&quot; src=&quot;path/index.js&quot;&gt;&lt;/script&gt;</code>这段代码就是引入外部资源，你可以在src=“”这里可以引入外部资源,可以指定绝对url、相对url，绝对url是指向其它站点（比如src=”<a href="https://cdn.jsdelivr.net/npm/vue&quot;），相对url是指向站点内的文件（比如src=&quot;path/index.js&quot;）。" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue&quot;），相对url是指向站点内的文件（比如src=&quot;path/index.js&quot;）。</a><br>在body部分中有<code>&lt;script type=&quot;text/javascript&quot;&gt;alert(&#39;Hello, world&#39;);&lt;/script&gt;</code>这样一段代码，javascript可以嵌入在网页内部的任何地方，他被浏览器直接执行，不过我们通常把js代码都放在head当中。你在script代码中可以看到<code>alert(&#39;Hello, world&#39;);</code>这条代码可以在浏览器中实现输出Hello，world对于初学者来说可以自己亲自尝试一下。<br><h2>基础语法</h2><br><p><br><br></p>
+    &lt;/html&gt;</code></code></pre></p><br>这段代码你可以很清楚的看到head部分中<code>&lt;script type=&quot;text/javascript&quot; src=&quot;path/index.js&quot;&gt;&lt;/script&gt;</code>这段代码就是引入外部资源，你可以在src=“”这里可以引入外部资源,可以指定绝对url、相对url，绝对url是指向其它站点（比如src=”<a href="https://cdn.jsdelivr.net/npm/vue&quot;），相对url是指向站点内的文件（比如src=&quot;path/index.js&quot;）。" target="_blank" rel="noopener">https://cdn.jsdelivr.net/npm/vue&quot;），相对url是指向站点内的文件（比如src=&quot;path/index.js&quot;）。</a><br>在body部分中有<code>&lt;script type=&quot;text/javascript&quot;&gt;alert(&#39;Hello, world&#39;);&lt;/script&gt;</code>这样一段代码，javascript可以嵌入在网页内部的任何地方，他被浏览器直接执行，不过我们通常把js代码都放在head当中。你在script代码中可以看到<code>alert(&#39;Hello, world&#39;);</code>这条代码可以在浏览器中实现输出Hello，world对于初学者来说可以自己亲自尝试一下。<br><h2>基础语法</h2><br><p>JavaScript语法是一套规则，它定义了JavaScript的语言结构，JavaScript语句定义了两种类型值：混合值和变量值，混合值被称为字面量，变量值被称为变量。<br></p><h4>字面量</h4><br><p>JavaScript中书写字面量重要的规则是，书写数值是否有小数点均可比如<code>12.90</code>,<code>100</code>，字符串是文本：由””or’’包围比如：”hello”,”world”</p><br><h4>JavaScript变量</h4><br><p>在编程语言中变量用于存储数据值。JavaScript用var来声明新的变量值“=”用于为变量赋值比如：<code>var x = 7;</code>,<code>var y;</code>所有JavaScript变量必须以唯一的名称标识，这些唯一的标识，称之为标识符，名称可包含字母、数字、下划线和美元符号，名称可以以字母开头、$、_开头，名称对大小写敏感，保留字（比如 JavaScript 的关键词）无法用作变量名称。“=”等号赋值是将右边的数据赋值给左边，如果原有的变量有赋值将会被替代掉</p><br><h4>JavaScript运算符</h4><br><p>JavaScript算数运算符，算数运算符用于对数字执行算数运算：+（相加）、-（相减）、<em>（相乘）、/（相除）、%（取余）、++（递加）、–（递减），我想你只要上过小学你就会明白四则运算是干什么的了，在这里讲解一下取余运算还有递加递减<br><pre><code><code>&lt;script&gt;
+    var x = 10;
+    var y = 9;
+      document.write(x%y)//    取余运算相当于用10/9=1.1....取1所以返回值为1
+      var x = x++;
+      document.write(x) // 返回值为10 x = x+1 因为是先返回在运算所以结果是10
+      var x = ++x;
+      document.write(x) // 返回值为11  ++x与x++相同 但是是先x+1在返回所以结果是11
+      递减与递加原理相同 只是x = x-1
+&lt;/script&gt;</code><br></code></pre></em></p><br><h4>赋值运算</h4><br><p><table><tbody><br>    <tr><th>运算符</th><br>        <th>结果</th></tr><br>    <tr><td>=</td><br>        <td>x = y</td></tr><br>    <tr><td>+=</td><br>        <td>x = x+y</td></tr><br>    <tr><td>-=</td><br>        <td>x = x-y</td></tr><br>    <tr><td>=</td><br>        <td>x = x*y</td></tr><br>    <tr><td>/=</td><br>        <td>x = x/y</td></tr><br>    <tr><td>%=</td><br>        <td>x = x%y</td></tr><br>    </tbody></table></p><br><p></p>
                 <hr>
                 
 
@@ -219,7 +228,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">js介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">ECMAscript？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">实现简单的js代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">基础语法</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">js介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">ECMAscript？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">实现简单的js代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">基础语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">JavaScript变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">JavaScript运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">赋值运算</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
